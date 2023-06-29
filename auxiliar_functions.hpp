@@ -186,13 +186,13 @@ Node *openFile(const char *sFileName, int iFormat2Read) {
 
 // Função que converte uma árvore para lista duplamente encadeada
 
-void convertToDLL(Node* root, Node** head, Node** tail) {
+void convertToLL(Node* root, Node** head, Node** tail) {
     if (root == nullptr) {
         return;
     }
 
     // Converter a subárvore esquerda em uma lista duplamente encadeada
-    convertToDLL(root->ptrLeft, head, tail);
+    convertToLL(root->ptrLeft, head, tail);
 
     // Conectar a raiz à lista duplamente encadeada
     if (*head == nullptr) {
@@ -205,11 +205,11 @@ void convertToDLL(Node* root, Node** head, Node** tail) {
     *tail = root;
 
     // Converter a subárvore direita em uma lista duplamente encadeada
-    convertToDLL(root->ptrRight, head, tail);
+    convertToLL(root->ptrRight, head, tail);
 }
 
 
-// A função convertToDLL é usada para realizar a conversão da árvore para a lista duplamente encadeada
+// A função convertToLL é usada para realizar a conversão da árvore para a lista duplamente encadeada
 // A função recebe três argumentos: o ponteiro para a raiz da árvore (root), o ponteiro para o 
 // ponteiro para a cabeça da lista (head), e o ponteiro para o ponteiro para o final da lista (tail).
 
